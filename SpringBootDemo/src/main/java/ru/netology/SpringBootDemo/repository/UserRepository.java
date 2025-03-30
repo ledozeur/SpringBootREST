@@ -10,9 +10,9 @@ import static ru.netology.SpringBootDemo.Authorities.*;
 @Repository
 public class UserRepository {
 
-    public List<Authorities> getUserAuthorities(String user, String password) {
+    public List<Authorities> getUserAuthorities(User user) {
         List<Authorities> authoritiesList = new ArrayList<>();
-        if (user.equals("Ivan") && password.equals("1234")) {
+        if (user.getUser().equals("Ivan") && user.getPassword().equals("1234")) {
             authoritiesList.add(READ);
 
         }
