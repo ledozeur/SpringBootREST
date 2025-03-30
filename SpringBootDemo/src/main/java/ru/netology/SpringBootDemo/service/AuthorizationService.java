@@ -7,9 +7,14 @@ import ru.netology.SpringBootDemo.exception.UnauthorizedUser;
 import ru.netology.SpringBootDemo.repository.UserRepository;
 
 import java.util.List;
+
 @Service
 public class AuthorizationService {
     UserRepository userRepository;
+
+public AuthorizationService(UserRepository userRepository){
+    this.userRepository = userRepository;
+}
 
     public List<Authorities> getAuthorities(String user, String password) {
         if (isEmpty(user) || isEmpty(password)) {
